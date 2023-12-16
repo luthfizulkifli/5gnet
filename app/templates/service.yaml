@@ -37,7 +37,7 @@ kind: Service
 metadata:
   name: mongodb
 spec:
-  clusterIP: 10.217.4.249
+  clusterIP: 10.217.4.239
   selector:
     app: mongodb
   ports:
@@ -66,7 +66,7 @@ kind: Service
 metadata:
   name: smf
 spec:
-  clusterIP: 10.217.4.242
+  clusterIP: 10.217.4.234
   selector:
     app: smf
   ports:
