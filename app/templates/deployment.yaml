@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: amf
+  name: mongodb
 spec:
-  replicas: 2
   selector:
     matchLabels:
-      app: amf
+      app: mongodb
   template:
     metadata:
-      name: amf
+      name: mongodb
       labels:
-        app: amf
+        app: mongodb
     spec:
       serviceAccountName: developer-sa
       containers:
-        - name: amf
-          image: luthfizulkifli/5gamf:v10
+        - name: mongodb
+          image: luthfizulkifli/5gmongodb:v1
           command: ["/bin/sh"]
-          args: ["-c","depmod && modprobe sctp && setsid ./open5gs/install/bin/open5gs-amfd && sleep infinity"]
+          args: ["-c","setsid ./open5gs/startmongodb.sh && sleep infinity"]
           securityContext:
             runAsUser: 0
             privileged: true
