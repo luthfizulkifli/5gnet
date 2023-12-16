@@ -66,7 +66,7 @@ kind: Service
 metadata:
   name: smf
 spec:
-  clusterIP: 10.217.4.234
+  clusterIP: 10.217.4.242
   selector:
     app: smf
   ports:
