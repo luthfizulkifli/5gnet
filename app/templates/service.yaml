@@ -1,18 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: amf
+  name: mongodb
 spec:
-  clusterIP: 10.217.4.233
+  clusterIP: 10.217.4.239
   selector:
-    app: amf
+    app: mongodb
   ports:
-    - name: sbi-port
-      port: 7777
-      targetPort: 7777
+    - name: mongodb-port
       protocol: TCP
-    - name: sctpserver
-      port: 38412
-      targetPort: 38412
-      protocol: SCTP
+      port: 27017
+      targetPort: 27017
   type: NodePort
